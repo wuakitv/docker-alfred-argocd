@@ -12,7 +12,7 @@ function exit_error {
 [ -z $PLUGIN_ARGOCD_AUTH_TOKEN ] && exit_error "Setting 'argocd_auth_token' is required."
 
 # Check if the application exists in the cluster
-if argocd app list --grpc-web --auth-token $PLUGIN_ARGOCD_AUTH_TOKEN | grep -q $TEST_APP
+if argocd app list --grpc-web --auth-token $PLUGIN_ARGOCD_AUTH_TOKEN | grep -q $PLUGIN_APP_NAME
 then
   echo "$PLUGIN_APP_NAME application exists in the ArgoCD cluster"
   # Sync the application if it exists
