@@ -1,6 +1,5 @@
 FROM alpine:3.11
 
-ENV ARGOCD_SERVER=argocd.wuaki.org
 ENV ARGOCD_VERSION=v1.3.6
 
 RUN apk add --no-cache --update curl
