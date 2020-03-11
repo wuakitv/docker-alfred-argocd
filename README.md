@@ -15,6 +15,12 @@ Name of an existing application already created on the K8S cluster and managed v
 
 This parameter is required.
 
+* `argocd_server`
+
+URL where the ArgoCD server is hosted.
+
+This parameter is required.
+
 
 ## Example usage
 ```
