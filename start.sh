@@ -8,8 +8,9 @@ function exit_error {
 }
 
 # Parameters check and set defaults
-[ -z $PLUGIN_APP_NAME ] && exit_error "Setting 'application_name' is required."
+[ -z $PLUGIN_APP_NAME ] && exit_error "Setting 'app_name' is required."
 [ -z $PLUGIN_ARGOCD_AUTH_TOKEN ] && exit_error "Setting 'argocd_auth_token' is required."
+[ -z $PLUGIN_ARGOCD_SERVER ] && exit_error "Setting 'argocd_server' is required."
 
 # Check if the application exists in the cluster
 if argocd app list --grpc-web --auth-token $PLUGIN_ARGOCD_AUTH_TOKEN | grep -q $PLUGIN_APP_NAME

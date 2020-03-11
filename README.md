@@ -25,6 +25,7 @@ This parameter is required.
       - master
   settings:
     argocd_auth_token:
-      from_consul_secret: <path>/<json_web_token>
-    application_name: <env>-k8s-<application>
+      from_consul_secret: argocd_auth_token
+    application_name: <app_name>
+    argocd_server: <server_name>
 ```
