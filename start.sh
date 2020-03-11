@@ -16,6 +16,9 @@ if argocd app list --grpc-web --auth-token $PLUGIN_ARGOCD_AUTH_TOKEN | grep -q $
 then
   echo "$PLUGIN_APP_NAME application exists in the ArgoCD cluster"
   # Sync the application if it exists
+  echo "Dry run for the $PLUGIN_APP_NAME sync:"
+  argocd app sync $PLUGIN_APP_NAME --grpc-web --auth-token $PLUGIN_ARGOCD_AUTH_TOKEN --dry-run
+
   echo "Syncing $PLUGIN_APP_NAME"
   argocd app sync $PLUGIN_APP_NAME --grpc-web --auth-token $PLUGIN_ARGOCD_AUTH_TOKEN
   exit 0
