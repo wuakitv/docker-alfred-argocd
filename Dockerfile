@@ -1,6 +1,6 @@
 FROM alpine:3.11
 
-ENV ARGOCD_VERSION=v1.3.6
+ENV ARGOCD_VERSION=v1.5.2
 
 RUN apk add --no-cache --update curl
 
